@@ -3,11 +3,11 @@
 package quickumlsrest
 
 import (
-	"net/http"
-	"encoding/json"
 	"bytes"
-	"path"
+	"encoding/json"
+	"net/http"
 	"net/url"
+	"path"
 )
 
 // Candidate defines the response from the quickUMLS-rest service.
