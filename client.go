@@ -23,6 +23,9 @@ type Candidate struct {
 	SnomedCT   []string `json:"snomed_ct"`
 }
 
+// Cache is a mapping from a string (term) to a Pair in QuickUMLS.
+type Cache map[string][]Candidate
+
 // Candidates is a collection of candidates.
 type Candidates []Candidate
 
