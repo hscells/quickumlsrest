@@ -11,12 +11,12 @@ func Load(dir string) (quickumlsrest.Cache, error) {
 	gob.Register(quickumlsrest.Cache{})
 	b, err := ioutil.ReadFile(dir)
 	if err != nil {
-		return nil, err
+		panic(err)
 	}
 	var c quickumlsrest.Cache
-	err = gob.NewDecoder(bytes.NewBuffer(b)).Decode(c)
+	err = gob.NewDecoder(bytes.NewBuffer(b)).Decode(&c)
 	if err != nil {
-		return nil, err
+		panic(err)
 	}
 	return c, nil
 }
